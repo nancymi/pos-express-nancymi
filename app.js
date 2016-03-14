@@ -5,12 +5,14 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var swig = require('swig');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
-var cart = require('./routes/cart');
-var receipt = require('./routes/receipt');
-var history = require('./routes/history');
+var getItems = require('./routes/api/get-items');
+var getCart = require('./routes/api/get-cart');
+var getReceipt = require('./routes/api/get-receipt');
+var getHistory = require('./routes/api/get-history');
+var getPromotions = require('./routes/api/get-promotions');
 
 var app = express();
 
@@ -33,7 +35,8 @@ switch (app.get('env')) {
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.engine('html', swig.renderFile);
+app.set('view engine', 'html');
 
 
 // uncomment after placing your favicon in /public
@@ -45,10 +48,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/users', users);
-app.use('/cart', cart);
-app.use('/receipt', receipt);
-app.use('./history', history);
+app.use('/get-cart', getCart);
+app.use('/get-receipt', getReceipt);
+app.use('/get-history', getHistory);
+app.use('/get-items', getItems);
+app.use('/get-promotions', getPromotions);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -81,5 +85,6 @@ app.use(function(err, req, res, next) {
   });
 });
 
+app.listen(63342);
 
 module.exports = app;

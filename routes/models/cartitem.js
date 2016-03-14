@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var Item = require('./item');
 
 var cartitemSchema = mongoose.Schema({
     item: Item,

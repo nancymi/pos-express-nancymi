@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var CartItem = require('./cartitem');
 
 var receiptSchema = mongoose.Schema({
     cartItems: [CartItem],

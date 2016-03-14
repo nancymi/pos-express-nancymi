@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购物车列表</title>
+
+    <script src="javascripts/lib/jquery-2.2.1.min.js"></script>
+    <script src="javascripts/logic/jump.js"></script>
+    <script src="javascripts/lib/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+    <script src="javascripts/logic/update-cart.js"></script>
+    <script src="javascripts/view/show-cart.js"></script>
+    <script src="javascripts/logic/generate-receipt.js"></script>
+    <script src="javascripts/data/data-access.js"></script>
+
+    <link href="stylesheets/cart.css">
+    <link href="stylesheets/lib/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/lib/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="stylesheets/lib/buttons.css">
+    <link rel="stylesheet" href="stylesheets/lib/font-awesome.min.css">
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="container text-center">
+        购物车列表
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div id="receipt" class="col-md-12" align="center">
+            <table id="cart-items" class="table table-hover text-center" align="center"></table>
+            <div id="total-normal-price" class="col-md-2 col-md-offset-4">总计: 20 元</div>
+            <div id="total-promo-price" class="col-md-2">优惠:6 元</div>
+        </div>
+        <div id="checkout" class="col-md-12" align="center">
+            <a id="checkout-button" class="button button-block button-rounded button-primary button-large">结账</a>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
