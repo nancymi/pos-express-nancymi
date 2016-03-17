@@ -1,0 +1,28 @@
+<head>
+    <link href="/stylesheets/receipt.css" rel="stylesheet">
+    <script src="/javascripts/view/receipt.js" ></script>
+</head>
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="container text-center">
+        购物清单
+    </div>
+    <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            导航 <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li><a href="index.html">主页面</a></li>
+            <li><a href="history.html">购买记录</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div id="receipt" class="col-md-12" align="center">
+            <table id="receipt-items" class="table table-hover text-center" align="center"></table>
+            <div id="total-normal-price" class="col-md-2 col-md-offset-4"></div>
+            <div id="total-promo-price" class="col-md-2"></div>
+        </div>
+    </div>
+</div>
