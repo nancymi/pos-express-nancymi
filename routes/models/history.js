@@ -1,10 +1,23 @@
 var mongoose = require('mongoose');
-var Receipt = require('./receipt');
 
-var historySchema = mongoose.Schema([{
+var historySchema = mongoose.Schema({
     timestamp: String,
-    receipt: Receipt,
-}]);
+    receipt: {
+        cartItems: [{
+            item: {
+                barcode: String,
+                name: String,
+                unit: String,
+                price: Number,
+            },
+            count: Number,
+            normalPrice: Number,
+            promoPrice: Number,
+        }],
+        totalNormalPrice: Number,
+        totalPromoPrice: Number,
+    }
+});
 
 var History = mongoose.model('History', historySchema);
 
