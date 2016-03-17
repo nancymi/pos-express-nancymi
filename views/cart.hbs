@@ -1,0 +1,24 @@
+<head>
+    <link href="/stylesheets/cart.css" rel="stylesheet">
+    <script src="/javascripts/view/cart.js" ></script>
+    <script src="/javascripts/generate-receipt.js" ></script>
+</head>
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="container text-center">
+        购物车列表
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div id="receipt" class="col-md-12" align="center">
+            <table id="cart-items" class="table table-hover text-center" align="center"></table>
+            <div id="total-normal-price" class="col-md-2 col-md-offset-4">总计: 20 元</div>
+            <div id="total-promo-price" class="col-md-2">优惠:6 元</div>
+        </div>
+        <div id="checkout" class="col-md-12" align="center">
+            <a id="checkout-button" class="button button-block button-rounded button-primary button-large">结账</a>
+        </div>
+    </div>
+
+</div>
