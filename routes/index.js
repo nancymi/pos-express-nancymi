@@ -1,27 +1,20 @@
-'use strict';
+var express = require('express');
+var router = express.Router();
 
-let express = require('express');
-let router = express.Router();
-
+/* GET home page. */
 router.get('/', function(req, res, next) {
-
-  console.log(req.ip);
-  res.render('index');
-  next();
+  res.render('index', { title: '没钱赚商店' });
 });
 
 router.get('/cart', function(req, res, next) {
-  console.log(req.ip);
   res.render('cart');
 });
 
 router.get('/receipt', function(req, res, next) {
-  console.log(req.ip);
   res.render('receipt');
 });
 
 router.get('/history', function(req, res, next) {
-  console.log(req.ip);
   res.render('history');
 });
 
